@@ -58,6 +58,7 @@ Go to the menu and change Controller: to read "Link2P"/"Link3P"/"Link4P", depend
 
 ## PC Engine CD-ROM support
 To be able to use PC-Engine/TurboGrafx16 CD-ROM games you have to have a CD-ROM System rom in your build. Use the normal builder to add any normal games that you want but also add a CD-ROM System rom to the compilation. After that also add the datatracks from the CD and optionaly a .tcd file ("cue" file) to the compilation, this is easiest done from a command prompt or in a batch file:
+
 `copy /b pcebuild.gba+cdgame.tcd+cdgame.iso pcecdbuild.gba`
 
 The .tcd files are not needed for all games, but the games that have several datatracks require it (not the ones that have a second copy of the first
@@ -129,7 +130,9 @@ Thanks to:
 - David Shadoff for a lot of the info.
 
 Fredrik Ahlström
+
 https://github.com/FluBBaOfWard
+
 https://twitter.com/TheRealFluBBa
 
 Some things to consider regarding emulation:
