@@ -129,7 +129,8 @@ Thanks to:
 - Charles MacDonald (http://cgfm2.emuviews.com) &
 - David Shadoff for a lot of the info.
 
-Fredrik Ahlström
+
+**Fredrik Ahlström**
 
 https://github.com/FluBBaOfWard
 
