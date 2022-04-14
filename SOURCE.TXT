@@ -1,0 +1,10 @@
+Here is the entire source code to PCEAdvance,
+based on Loopy's PocketNES.
+You are free to do anything you want with it.
+I only ask that if you do use any of it in your own project, you
+give me and Loopy some credit for it.
+This was compiled with ARM SDT 2.50.
+
+-=-=-=-=-=-=-
+Fredrik Olsson
+flubba@passagen.se
