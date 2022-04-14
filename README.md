@@ -56,16 +56,7 @@ To use as a Pogoshell plugin, first copy "pceadvance.gba" to the plugin folder t
 ## Multi player link play
 Go to the menu and change Controller: to read "Link2P"/"Link3P"/"Link4P", depending on how many Gameboys you will use. Once this is done on all GBAs, leave the menu on all slaves first, then the master, the game will restart and you can begin playing. If the link is lost (cable is pulled out, or a GBA is restarted), link must be re-initiated, this is done by a restart on the master and then selecting the appropriate link and leave the menu. The slaves doesn't have to do anything. Use an original Nintendo cable!
 
-## Advanced:
-
-### SRAM
-The first 8kByte of the GBA sram is the pce sram, this can be exchanged between other pce emus, I think you have to change MagicEngine's ini to old format. Use a "CD-ROM System" rom to manage your pce sram's, press [SELECT] to access the SRAM manager, the US version is encrypted, don't forget to decrypt it.
-
-### GameBoy Player
-To be able to check for the GameBoy Player one must display the GameBoy Player logo, the easiest way to get it is by downloading it from my homepage.
-Otherwise you can rip it from any other game that displays it (SMA4 & Pokemon Pinball). There is no actuall use for it yet, but the check is there and I would appreciate if people could test it on their GameBoy Players, it says in the menu "PCEAdvance v7.3 on GBP".
-
-### PC Engine CD-ROM support
+## PC Engine CD-ROM support
 To be able to use PC-Engine/TurboGrafx16 CD-ROM games you have to have a CD-ROM System rom in your build. Use the normal builder to add any normal games that you want but also add a CD-ROM System rom to the compilation. After that also add the datatracks from the CD and optionaly a .tcd file ("cue" file) to the compilation, this is easiest done from a command prompt or in a batch file:
 `copy /b pcebuild.gba+cdgame.tcd+cdgame.iso pcecdbuild.gba`
 
@@ -101,7 +92,7 @@ and use it as the plugin for iso files (and pce files).
 - Ys Book 1&2 (U): Ok
 - Ys 3: Wanderers From Ys (U): Too big too fit on a flashcart.
 
-#### Super CD-Rom games I've tested so far:
+#### Super CD-Rom games I've tested so far (Supercard/EZ3 builds only):
 - Conan: Intro Ok
 - Cotton - Fantastic Night Dream (U): Ok
 - Double Dragon 2: Ok
@@ -117,6 +108,17 @@ and use it as the plugin for iso files (and pce files).
 - Riot Zone: Ok
 - R-Type Complete CD (J): Ok
 - Shadow of the Beast (U): Ok, some flicker in intro.
+
+
+## Advanced
+
+### SRAM
+The first 8kByte of the GBA sram is the pce sram, this can be exchanged between other pce emus, I think you have to change MagicEngine's ini to old format. Use a "CD-ROM System" rom to manage your pce sram's, press [SELECT] to access the SRAM manager, the US version is encrypted, don't forget to decrypt it.
+
+### GameBoy Player
+To be able to check for the GameBoy Player one must display the GameBoy Player logo, the easiest way to get it is by downloading it from my homepage.
+Otherwise you can rip it from any other game that displays it (SMA4 & Pokemon Pinball). There is no actuall use for it yet, but the check is there and I would appreciate if people could test it on their GameBoy Players, it says in the menu "PCEAdvance v7.3 on GBP".
+
 
 
 ### Credits
