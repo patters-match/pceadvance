@@ -5,28 +5,28 @@ It's mostly slow, crap sound, "Chikudenya Toubee (J)" doesn't even start.
 All games are not perfect.
 
 But there are actually games that are enjoyable:
-1943 Kai (J) - Takes some time before it starts, but runs ok.
-Aero Blasters (U) - ok speed. (spr 6)
-After Burner II (J) - Cool game =)
-Alien Crush (J) - Perfect?
-Atomic Robokid Special (J) - Good speed. (spr 0)
-Bomberman 93 - Perfect?
-Darius (Alpha/Plus) - Very good speed.
-Gomola Speed - Strange but funny game.
-Hani in the Sky (J) - Good speed.
-Image Fight (J) - Good speed.
-Kyuukyoku Tiger (J) - Good Speed.
-Mr. Heli - Screen to wide, otherwise ok.
-Neutopia (U) - Seem ok, even save.
-Ninja Warriors (J) - Good speed.
-Operation Wolf (J) - Good speed.
-Override (J) - Super speed if you turn off Timer IRQ.
-Pacland (J) - Good speed.
-R-Type - Good speed.
-Rastan Saga II (J) - Good speed.
-Super Star Soldier.
-Tatsujin (J) - Good speed.
-Tenseiryu Saint Dragon (J) - Good speed.
+- 1943 Kai (J) - Takes some time before it starts, but runs ok.
+- Aero Blasters (U) - ok speed. (spr 6)
+- After Burner II (J) - Cool game =)
+- Alien Crush (J) - Perfect?
+- Atomic Robokid Special (J) - Good speed. (spr 0)
+- Bomberman 93 - Perfect?
+- Darius (Alpha/Plus) - Very good speed.
+- Gomola Speed - Strange but funny game.
+- Hani in the Sky (J) - Good speed.
+- Image Fight (J) - Good speed.
+- Kyuukyoku Tiger (J) - Good Speed.
+- Mr. Heli - Screen to wide, otherwise ok.
+- Neutopia (U) - Seem ok, even save.
+- Ninja Warriors (J) - Good speed.
+- Operation Wolf (J) - Good speed.
+- Override (J) - Super speed if you turn off Timer IRQ.
+- Pacland (J) - Good speed.
+- R-Type - Good speed.
+- Rastan Saga II (J) - Good speed.
+- Super Star Soldier.
+- Tatsujin (J) - Good speed.
+- Tenseiryu Saint Dragon (J) - Good speed.
 
 These are just suggestions, please try what ever game you like
 (alot of US games doesn't work because they are encrypted,
