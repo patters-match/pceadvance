@@ -1,10 +1,7 @@
 # PCEAdvance V7.5
 
 This is a PC-Engine/TurboGrafx-16 emulator for the GBA, it can also emulate some of the CD-ROM games, and Super CD-ROM if you've got an EZ3 card.
-It's mostly slow, crap sound, "Chikudenya Toubee (J)" doesn't even start.
-All games are not perfect.
-
-But there are actually games that are enjoyable:
+It's mostly slow but there are actually games that are enjoyable:
 - 1943 Kai (J) - Takes some time before it starts, but runs ok.
 - Aero Blasters (U) - ok speed. (spr 6)
 - After Burner II (J) - Cool game =)
@@ -78,9 +75,9 @@ and use it as the plugin for iso files (and pce files).
 - HellFire S: Ok, screen too wide though.
 - Jyuohki (J)/(Altered Beast): Ok
 - Macross 2036 (J): Ok
-- MineSweeper (J): Ok.
-- Monster Lair: Ok.
-- Rayxanber II (U): Palette issues on first Boss, corrupt "Game Over" screen.
+- MineSweeper (J): Ok
+- Monster Lair: Ok
+- Rayxanber II (U): Ok
 - Red Alert (J): Ok
 - Road Spirits: Ok
 - Space Fantasy Zone (J/U): Ok
