@@ -39,9 +39,10 @@ loadcart ;called from C:  r0=rom number, r1=emuflags
 
 	ldr globalptr,=|wram_globals0$$Base|	;need ptr regs init'd
 	ldr pce_zpage,=PCE_RAM
-;	bl TestEZ3RAM
-	cmp r0,#0
-;	bleq EnableEZ3RAM
+;	bl TestEZ4RAM
+;	cmp r0,#0
+;	bleq EnableEZ4RAM
+	bl EnableEZ4RAM
 
 	ldmfd sp!,{r0-r1}
 	str r0,romnumber
@@ -540,8 +541,28 @@ ls3	mov r1,r3
 
 ;	bg0_cnt 0x5c02,
 ;----------------------------------------------------------------------------
-EnableEZ3RAM
+EnableEZ4RAM
 ;----------------------------------------------------------------------------
+
+;OpenWrite
+;this additional command seems to be required for EZ4 PSRAM access (added by patters)
+	ldr r2,=0x9fe0000
+	mov r0,#0xD200
+	strh r0,[r2]			;*(u16 *)0x9fe0000 = 0xD200;
+	mov r4,#0x8000000
+	mov r1,#0x1500
+	strh r1,[r4]			;*(u16 *)0x8000000 = 0x1500;
+	add r4,r4,#0x20000
+	strh r0,[r4]			;*(u16 *)0x8020000 = 0xD200;
+	add r4,r4,#0x20000
+	strh r1,[r4]			;*(u16 *)0x8040000 = 0x1500;
+	ldr r4,=0x9C40000
+	mov r0,#0x1500
+	strh r0,[r4]			;*(u16 *)0x9C40000 = 0x1500;
+	sub r2,r2,#0x20000
+	strh r1,[r2]			;*(u16 *)0x9fc0000 = 0x1500;
+
+;OpenRamWrite
 	ldr r2,=0x9fe0000
 	mov r0,#0xD200
 	strh r0,[r2]			;*(u16 *)0x9fe0000 = 0xD200;
@@ -554,13 +575,15 @@ EnableEZ3RAM
 	strh r1,[r4]			;*(u16 *)0x8040000 = 0x1500;
 	ldr r4,=0x9C40000
 	mov r0,#0xA500
-	strh r0,[r4]			;*(u16 *)0x9C40000 = 0xA500;		//This is the OpenWriteCommand
+	strh r0,[r4]			;*(u16 *)0x9C40000 = 0xA500; for the EZ4_1Chip variant this needs to be 0x5A00
+;I'm not enough of an assembly programmer to re-implement the model detection code in ARM ASM, and my own EZ4 is not this type
+;see https://github.com/ez-flash/ez3pda/blob/1d16559caf7a94dff6d8fdcf94f572bc09b36ae4/hard.cpp#L39
 	sub r2,r2,#0x20000
 	strh r1,[r2]			;*(u16 *)0x9fc0000 = 0x1500;
 ;	bx lr
 
 ;----------------------------------------------------------------------------
-TestEZ3RAM
+TestEZ4RAM
 ;----------------------------------------------------------------------------
 	ldr r0,=0x08FD0000		;EZ3 PSRAM, last 192kB
 	ldr r1,=0x5AB07A6E
