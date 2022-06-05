@@ -127,10 +127,11 @@ tbloop2
 	cmp r0,#0
 	beq noscd
 
-	mov r1,#0		
+	mov r1,#0				;clear Super-CD_RAM - PSRAM will be dirty after a soft reset
 	mov r2,#0xC000
-	bl memset_				;clear Super-CD_RAM - PSRAM will be dirty after a soft reset
+	bl memset_
 
+	mov r1,r0
 	ldr r8,=scdram_W
 	mov r0,#0x68			;Super-CD_RAM
 meml1
