@@ -39,10 +39,8 @@ loadcart ;called from C:  r0=rom number, r1=emuflags
 
 	ldr globalptr,=|wram_globals0$$Base|	;need ptr regs init'd
 	ldr pce_zpage,=PCE_RAM
-;	bl TestEZ4RAM
-;	cmp r0,#0
-;	bleq EnableEZ4RAM
-	bl EnableEZ4RAM
+
+	bl EnableEZRAM		;enable EZ-Flash PSRAM
 
 	ldmfd sp!,{r0-r1}
 	str r0,romnumber
@@ -125,9 +123,14 @@ tbloop2
 
 	cmp r2,#0x1F			;BIOS = 256kB
 	bne nocd
-	ldr r1,SCD_RAMp			;EZ3 PSRAM
-	cmp r1,#0
+	ldr r0,SCD_RAMp			;EZ PSRAM
+	cmp r0,#0
 	beq noscd
+
+	mov r1,#0		
+	mov r2,#0xC000
+	bl memset_				;clear Super-CD_RAM - PSRAM will be dirty after a soft reset
+
 	ldr r8,=scdram_W
 	mov r0,#0x68			;Super-CD_RAM
 meml1
@@ -541,12 +544,12 @@ ls3	mov r1,r3
 
 ;	bg0_cnt 0x5c02,
 ;----------------------------------------------------------------------------
-EnableEZ4RAM
+EnableEZRAM
 ;----------------------------------------------------------------------------
 
-;OpenWrite
+;OpenWrite() - unlocks PSRAM for writes, in game mode all 16MB are mapped from 0x8000000
 	ldr r2,=0x9fe0000
-	mov r0,#0xD200
+	mov r0,#0xd200
 	strh r0,[r2]			;*(u16 *)0x9fe0000 = 0xd200;
 	mov r4,#0x8000000
 	mov r1,#0x1500
@@ -560,14 +563,11 @@ EnableEZ4RAM
 	sub r2,r2,#0x20000
 	strh r1,[r2]			;*(u16 *)0x9fc0000 = 0x1500;
 
-;----------------------------------------------------------------------------
-TestEZ4RAM
-;----------------------------------------------------------------------------
-	ldr r0,=0x08FD0000		;EZ4 PSRAM, last 192KB
-	ldr r1,=0x5AB07A6E
+	ldr r0,=0x08FD0000		;EZ-Flash PSRAM, last 192KB which is 0x8000000 + 0x1000000 (16384KB) - 0x30000 (192KB)
+	ldr r1,=0x5AB07A6E		;https://www.youtube.com/watch?v=z5rRZdiu1UE
 	str r1,[r0]
 	ldr r2,[r0]
-	cmp r1,r2
+	cmp r1,r2				;test write
 	movne r0,#0
 	str r0,SCD_RAMp
 	subeq r0,r0,#0x200000	;Arcade Card is 2MB.

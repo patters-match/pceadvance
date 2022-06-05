@@ -3,7 +3,7 @@
 init_flashcart
 ;CloseWrite - lock PSRAM to return it to its original state
 	ldr r2,=0x9fe0000
-	mov r0,#0xD200
+	mov r0,#0xd200
 	strh r0,[r2]			;*(u16 *)0x9fe0000 = 0xd200;
 	mov r4,#0x8000000
 	mov r1,#0x1500
@@ -19,13 +19,13 @@ init_flashcart
 
 ;SetRomPage(0x8000) - put the EZ-Flash into OS Mode with bootloader mapped to 0x8000000
 	ldr r2,=0x9fe0000
-	mov r0,#0xD200
-	strh r0,[r2]			;*(u16 *)0x9fe0000 = 0xD200;
+	mov r0,#0xd200
+	strh r0,[r2]			;*(u16 *)0x9fe0000 = 0xd200;
 	mov r4,#0x8000000
 	mov r1,#0x1500
 	strh r1,[r4]			;*(u16 *)0x8000000 = 0x1500;
 	add r4,r4,#0x20000
-	strh r0,[r4]			;*(u16 *)0x8020000 = 0xD200;
+	strh r0,[r4]			;*(u16 *)0x8020000 = 0xd200;
 	add r4,r4,#0x20000
 	strh r1,[r4]			;*(u16 *)0x8040000 = 0x1500;
 	ldr r4,=0x9880000
@@ -50,10 +50,9 @@ doReset
 	mov r0, #0
 	ldr r1,=0x3007ffa		;must be 0 before swi 0x00 is run, otherwise it tries to start from 0x02000000.
 	strh r0,[r1]
-;	mov r0, #0xC			;VRAM & Palette clear
-	mov r0, #8			;VRAM clear
+	mov r0, #0xC			;VRAM & Palette clear
+;	mov r0, #8			;VRAM clear
 	swi 0x010000
 	swi 0x000000
 
 	END
-
