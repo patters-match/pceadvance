@@ -564,13 +564,13 @@ EnableEZ4RAM
 TestEZ4RAM
 ;----------------------------------------------------------------------------
 	ldr r0,=0x08FD0000		;EZ4 PSRAM, last 192KB
-	ldr r1,=0x5AB07A6E
+	ldr r1,=0x5AB07A6E		;https://www.youtube.com/watch?v=z5rRZdiu1UE
 	str r1,[r0]
 	ldr r2,[r0]
 	cmp r1,r2
 	movne r0,#0
 	str r0,SCD_RAMp
-	subeq r0,r0,#0x200000	;Arcade Card is 2MB.
+	subeq r0,r0,#0x200000		;Arcade Card is 2MB.
 	str r0,ACC_RAMp
 	bx lr
 
