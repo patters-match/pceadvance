@@ -544,7 +544,7 @@ ls3	mov r1,r3
 EnableEZ4RAM
 ;----------------------------------------------------------------------------
 
-;OpenWrite() - unlocks PSRAM for writes
+;OpenWrite() - unlocks PSRAM for writes, in game mode all 16MB are mapped from 0x8000000
 	ldr r2,=0x9fe0000
 	mov r0,#0xd200
 	strh r0,[r2]			;*(u16 *)0x9fe0000 = 0xd200;
@@ -563,7 +563,7 @@ EnableEZ4RAM
 ;----------------------------------------------------------------------------
 TestEZ4RAM
 ;----------------------------------------------------------------------------
-	ldr r0,=0x08FD0000		;EZ4 PSRAM, last 192KB
+	ldr r0,=0x08FD0000		;EZ4 PSRAM, last 192KB which is 0x8000000 + 0x1000000 (16384KB) - 0x30000 (192KB)
 	ldr r1,=0x5AB07A6E		;https://www.youtube.com/watch?v=z5rRZdiu1UE
 	str r1,[r0]
 	ldr r2,[r0]
