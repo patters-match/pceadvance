@@ -544,9 +544,9 @@ ls3	mov r1,r3
 EnableEZ4RAM
 ;----------------------------------------------------------------------------
 
-;OpenWrite
+;OpenWrite() - unlocks PSRAM for writes
 	ldr r2,=0x9fe0000
-	mov r0,#0xD200
+	mov r0,#0xd200
 	strh r0,[r2]			;*(u16 *)0x9fe0000 = 0xd200;
 	mov r4,#0x8000000
 	mov r1,#0x1500
