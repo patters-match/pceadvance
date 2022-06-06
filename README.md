@@ -87,7 +87,7 @@ To use CD-ROM support from Pogoshell just make a build with only the CD-ROM Syst
 - Ys Book 1&2 (U): Ok
 - Ys 3: Wanderers From Ys (U): Too big too fit on a flashcart.
 
-#### Super CD-Rom games tested so far (SuperCard/EZ-Flash builds only):
+#### Super CD-ROM games tested so far (SuperCard/EZ-Flash builds only):
 - Conan: Intro Ok
 - Cotton - Fantastic Night Dream (U): Ok
 - Double Dragon 2: Ok
