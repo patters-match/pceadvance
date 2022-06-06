@@ -71,7 +71,7 @@ defaults to importing the file *bios.bin* but this can be overridden using the `
 Most CD-ROM games have data in track 2, and a very similar sized second copy of that data as the final track. All other 
 tracks are usually audio. PCEAdvance cannot play the audio so usually it only needs track 2. This can be extracted from a 
 typical ```.bin/.cue``` disc image using a tool such as Isobuster on Windows, or using *bchunk* on macOS or Linux. You 
-should include in the ISO filename the required system type: "CD", "SCD" (for Super CD-ROM), or "ACD" (for Arcade CD-ROM). 
+should include in the ISO filename the required system type: (CD), or (SCD) for Super CD-ROM, or (ACD) for Arcade CD-ROM. 
 You can determine this by consulting the lists published at https://www.necstasy.net
 
 Some games do have multiple data tracks (excluding the last duplicate of track 2), and in this case they will need at 
@@ -166,8 +166,7 @@ https://github.com/FluBBaOfWard
 
 https://twitter.com/TheRealFluBBa
 
-Some things to consider regarding this emulation:
-PCE has 64KB of VRAM which can be background and/or sprites,
-GBA has 64KB background and 32KB sprite VRAM.
-The PCE CPU runs at either 1.78MHz (like the NES) or at 7.2MHz (all games seem to use the fast mode), the GBA CPU runs at 
-16MHz.
+Some things to consider regarding this emulation: PCE has 64KB of VRAM which can be background and/or sprites, GBA has 64KB 
+background and 32KB sprite VRAM. The PCE CPU runs at either 1.78MHz (like the NES) or at 7.2MHz (all games seem to use the 
+fast mode), the GBA CPU runs at 16MHz.
+
