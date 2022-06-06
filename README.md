@@ -57,7 +57,7 @@ Some games do have multiple data tracks (excluding the last duplicate of track 2
 
 Owing to the way PCEAdvance organises the CD-ROM data you are limited to a single CD game in each build, but it can co-exist with other ROMs and can be added in any order using the Python 3 builder.
 
-An additional caveat is that the PSRAM on the supported flashcarts for Super CD-ROM is limited to 16MB. PSRAM cannot be accessed if the emulator is copied to NOR flash (32MB) and executed from there. This means that titles larger than 16MB are automatically truncated by the Python builder so they fit in PSRAM, losing some game data in the proces. *Akumajou Dracula X: Chi no Rondo* is one such title. Though it does apparently work, it would not be able to be played to completion.
+An additional caveat is that the PSRAM on the EZ-Flash flashcarts for Super CD-ROM is limited to 16MB. PSRAM cannot be accessed if the emulator is copied to NOR flash (32MB) and executed from there. This means that titles larger than 16MB are automatically truncated by the Python builder so they fit in PSRAM, losing some game data in the proces. *Akumajou Dracula X: Chi no Rondo* is one such title. Though it does apparently work, it would not be able to be played to completion.
 
 To use CD-ROM support from Pogoshell just make a build with only the CD-ROM System ROM and use it as the plugin for ```.iso``` files (and ```.pce``` files).
 
