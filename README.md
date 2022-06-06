@@ -65,7 +65,7 @@ original Nintendo cable!
 ## PC Engine CD-ROM support
 The legacy Win32 builder prevents adding CD-ROM data correctly (it mistakenly pads the preceding ROM data), so use the new 
 Python 3 builder instead. You can read the builder's full help text using the ```-h``` option. To be able to use PC-Engine / 
-TurboGrafx16 CD-ROM games you have to have a CD-ROM System ROM in your build. The builder will add this automatically, it 
+TurboGrafx16 CD-ROM games you have to have a *CD-ROM System* ROM in your build. The builder will add this automatically, it 
 defaults to importing the file *bios.bin* but this can be overridden using the ```-b``` option (BIOS).
 
 Most CD-ROM games have data in track 2, and a very similar sized second copy of that data as the final track. All other 
@@ -139,9 +139,9 @@ To use CD-ROM support from Pogoshell just make a build with only the CD-ROM Syst
 ## Advanced
 
 ### SRAM
-The first 8kByte of the GBA SRAM is the pce sram, this can be exchanged between other PC Engine emulators, I think you have 
-to change MagicEngine's INI to old format. Use a "CD-ROM System" ROM to manage your PC Engine SRAMs, press Select to access 
-the SRAM manager, the US version is encrypted, don't forget to decrypt it.
+The first 8KB of the GBA SRAM is the PC Engine SRAM, this can be exchanged between other PC Engine emulators, I think you 
+have to change MagicEngine's INI to old format. Use a *CD-ROM System* ROM to manage your PC Engine SRAMs, press Select to 
+access the SRAM manager. The US version is encrypted, don't forget to decrypt it.
 
 ### GameBoy Player
 To be able to check for the GameBoy Player one must display the GameBoy Player logo, the easiest way to get it is by 
