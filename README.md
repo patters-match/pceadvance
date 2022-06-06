@@ -1,6 +1,6 @@
 # PCEAdvance V7.5
 
-This is a PC-Engine/TurboGrafx-16 emulator for the Gameboy Advance, rescued from the [Web Archive](https://web.archive.org/web/20150430211123/http://www.ndsretro.com/gbadown.html). It can also emulate some of the CD-ROM games, and Super CD-ROM if you've got an EZ-Flash III / IV / V flashcart or a SuperCard.
+This is a PC-Engine/TurboGrafx-16 emulator for the Gameboy Advance, rescued from the [Web Archive](https://web.archive.org/web/20150430211123/http://www.ndsretro.com/gbadown.html). It can also emulate some of the CD-ROM games, and Super CD-ROM if you've got an EZ-Flash III / IV / 3-in-1 flashcart or a SuperCard.
 
 It's mostly slow but there are actually games that are enjoyable:
 - 1943 Kai (J) - Takes some time before it starts, but runs ok.
