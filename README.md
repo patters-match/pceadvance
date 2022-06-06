@@ -112,7 +112,7 @@ The first 8kByte of the GBA SRAM is the pce sram, this can be exchanged between 
 
 ### GameBoy Player
 To be able to check for the GameBoy Player one must display the GameBoy Player logo, the easiest way to get it is by downloading it from my homepage.
-Otherwise you can rip it from any other game that displays it (SMA4 & Pokemon Pinball). There is no actuall use for it yet, but the check is there and I would appreciate if people could test it on their GameBoy Players, it says in the menu "PCEAdvance v7.5 on GBP".
+Otherwise you can rip it from any other game that displays it (SMA4 & Pokemon Pinball). There is no actual use for it yet, but the check is there and I would appreciate if people could test it on their GameBoy Players, report whether it says "PCEAdvance v7.5 on GBP" in the menu.
 
 
 ### Credits
