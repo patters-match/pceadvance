@@ -108,7 +108,7 @@ To use CD-ROM support from Pogoshell just make a build with only the CD-ROM Syst
 - Shadow of the Beast (U): Ok, some flicker in intro
 
 ## Credits
-Huge thanks to Loopy for the incredible PocketNES, without it this emu would probably never have been made. Big thanks to Hoe for the ROM-Builder.
+Huge thanks to Loopy for the incredible PocketNES, without it this emulator would probably never have been made. Big thanks to Hoe for the ROM-Builder.
 Thanks to:
 - Zeograd for a lot of help with the debugging
 - [Charles MacDonald](http://techno-junk.org) &
