@@ -26,7 +26,7 @@ It's mostly slow but there are actually games that are enjoyable:
 - Tatsujin (J) - Good speed.
 - Tenseiryu Saint Dragon (J) - Good speed.
 
-These are just suggestions, please try what ever game you like. A lot of US games don't work because they are encrypted, use PCEToy to decrypt these before you use them. Also remember to click "US rom" in the legacy Win32 builder app if you want them to work. If using the Python 3 builder make sure US ROM filenames contain "(U)" or "(USA)". Don't use overdumps as these are evil on PC Engine.
+These are just suggestions, please try what ever game you like. A lot of US games don't work because they are encrypted, use PCEToy to decrypt these before you use them. Also remember to click "US rom" in the legacy Win32 builder app if you want them to work. If using the Python 3 builder make sure US ROM filenames contain (U) or (USA). Don't use overdumps as these are evil on PC Engine.
 
 ## How to use
 When the emulator starts use Up/Down to select game, then use B or A to start the game selected. Press L+R to open the menu, A to choose, B (or L+R again) to cancel.
@@ -42,7 +42,7 @@ When the emulator starts use Up/Down to select game, then use B or A to start th
 - Sleep: START+SELECT wakes up from sleep mode (activated from menu or 5/10/30 minutes of inactivity)
 
 ## Pogoshell
-To use as a Pogoshell plugin, first copy "pceadvance.gba" to the plugin folder then rename it to "pce.bin". To make it work with US roms the name of the rom must not contain (J) or (j). In the same manner Japanese roms should preferably contain (J) or (j), most Japanese roms seem to run on US hardware anyway though.
+To use as a Pogoshell plugin, first copy *pceadvance.gba* to the plugin folder then rename it to *pce.bin*. To make it work with US roms the name of the rom must not contain (J) or (j). In the same manner Japanese roms should preferably contain (J) or (j), most Japanese roms seem to run on US hardware anyway though.
 
 ## Multi player link play
 Go to the menu and change Controller: to read "Link2P"/"Link3P"/"Link4P", depending on how many Gameboys you will use. Once this is done on all GBAs, leave the menu on all slaves first, then the master, the game will restart and you can begin playing. If the link is lost (cable is pulled out, or a GBA is restarted), link must be re-initiated, this is done by a restart on the master and then selecting the appropriate link and leave the menu. The slaves doesn't have to do anything. Use an original Nintendo cable!
