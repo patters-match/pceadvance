@@ -68,11 +68,11 @@ Python 3 builder instead. You can read the builder's full help text using the ``
 TurboGrafx16 CD-ROM games you have to have a *CD-ROM System* ROM in your build. The builder will add this automatically, it 
 defaults to importing the file *bios.bin* but this can be overridden using the ```-b``` option (BIOS).
 
-Most CD-ROM games have data in track 2, and a very similar sized second copy of that data as the final track. All other 
-tracks are usually audio. PCEAdvance cannot play the audio so usually it only needs the track 2 data in ```.iso``` format. 
-This can be extracted from a typical ```.bin/.cue``` disc image using a tool such as Isobuster on Windows, or using *bchunk* 
-on macOS or Linux. You should include in the ISO filename the required system type: (CD), or (SCD) for Super CD-ROM, or 
-(ACD) for Arcade CD-ROM. You can determine this by consulting the lists published at https://www.necstasy.net
+Most CD-ROM games have data in CD track 2, and a very similar sized second copy of that data as the final CD track. All 
+other tracks are usually audio. PCEAdvance cannot play the audio so usually it only needs the track 2 data in ```.iso``` 
+format. This can be extracted from a typical ```.bin/.cue``` disc image using a tool such as Isobuster on Windows, or using 
+*bchunk* on macOS or Linux. You should include in the ISO filename the required system type: (CD), or (SCD) for Super 
+CD-ROM, or (ACD) for Arcade CD-ROM. You can determine this by consulting the lists published at https://www.necstasy.net
 
 Some games do have multiple data tracks (excluding the last duplicate of track 2), for instance *Macross 2036*, and in this 
 case they will need at ```.tcd``` track index file. Some are included with PCEAdvance, along with the specification. If you 
