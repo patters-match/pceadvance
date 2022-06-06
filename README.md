@@ -49,11 +49,11 @@ To use as a Pogoshell plugin, first copy *pceadvance.gba* to the plugin folder t
 Go to the menu and change Controller: to read *Link2P/Link3P/Link4P*, depending on how many Gameboys you will use. Once this is done on all GBAs, leave the menu on all slaves first, then the master, the game will restart and you can begin playing. If the link is lost (cable is pulled out, or a GBA is restarted), link must be re-initiated, this is done by a restart on the master and then selecting the appropriate link and leave the menu. The slaves doesn't have to do anything. Use an original Nintendo cable!
 
 ## PC Engine CD-ROM support
-To be able to use PC-Engine/TurboGrafx16 CD-ROM games you have to have a CD-ROM System ROM (BIOS) in your build. The legacy Win32 builder prevents adding CD-ROM data correctly (it mistakenly pads the ROM data), so use the new Python 3 builder instead. The BIOS filename defaults to *bios.bin* but this can be overridden with ```-b```.
+To be able to use PC-Engine/TurboGrafx16 CD-ROM games you have to have a CD-ROM System ROM (BIOS) in your build. The legacy Win32 builder prevents adding CD-ROM data correctly (it mistakenly pads the ROM data), so use the new Python 3 builder instead. The BIOS filename defaults to *bios.bin* but this can be overridden using the ```-b``` option.
 
 Most CD-ROM games have data in track 2, and a very similar sized second copy of that data as the final track. All other tracks are usually audio. PCEAdvance cannot play the audio so usually it only needs track 2. This can be extracted using a tool such as Isobuster on Windows, or using *bchunk* on macOS or Linux. You should include in the ISO filename the required system type: "CD", "SCD" (Super CD-ROM), or "ACD" (Arcade CD-ROM). You can determine this by consulting the lists published at https://www.necstasy.net
 
-Some games do have multiple data tracks (excluding the last duplicate of track 2), and in this case they will need at ```.tcd``` track index file. Some are included in the binary distribution, along with the specification. If you need to make new ones, the TOC LBA values can be taken directly from https://www.necstasy.net and converted to hex using a calculator. If the Python 3 builder finds a ```.tcd``` file with the same name as the added ```.iso``` file it will be added automatically. If the name is different, it can be specified using ```-t```.
+Some games do have multiple data tracks (excluding the last duplicate of track 2), and in this case they will need at ```.tcd``` track index file. Some are included in the binary distribution, along with the specification. If you need to make new ones, the TOC LBA values can be taken directly from https://www.necstasy.net and converted to hex using a calculator. If the Python 3 builder finds a ```.tcd``` file with the same name as the added ```.iso``` file it will be added automatically. If the name is different, it can be specified using the ```-t``` option.
 
 Owing to the way the CD-ROM data is stored, you can only have a single CD game in each build but it can co-exist with other ROMs and be added in any order (the Python 3 builder will comply with the original instructions).
 
@@ -127,8 +127,7 @@ https://github.com/FluBBaOfWard
 
 https://twitter.com/TheRealFluBBa
 
-Some things to consider regarding emulation:
-PCE has 64kByte of VRAM which can be background and/or sprites,
-GBA has 64kByte background and 32kByte sprite VRAM.
-The PCE CPU runs at either 1.78MHz (like the NES) or at 7.2MHz (all
-games seem to use the fast mode), the GBA CPU runs at 16MHz.
+Some things to consider regarding this emulation:
+PCE has 64KB of VRAM which can be background and/or sprites,
+GBA has 64KB background and 32KB sprite VRAM.
+The PCE CPU runs at either 1.78MHz (like the NES) or at 7.2MHz (all games seem to use the fast mode), the GBA CPU runs at 16MHz.
