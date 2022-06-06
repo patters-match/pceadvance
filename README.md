@@ -55,7 +55,7 @@ Most CD-ROM games have data in track 2, and a very similar sized second copy of 
 
 Some games do have multiple data tracks (excluding the last duplicate of track 2), and in this case they will need at ```.tcd``` track index file. Some are included with PCEAdvance, along with the specification. If you need to make new ones, the TOC LBA values can be taken directly from https://www.necstasy.net and converted to hex. If the Python 3 builder finds a ```.tcd``` file with the same name as the added ```.iso``` file it will be added automatically. If the name is different, it can be specified using the ```-t``` option.
 
-Owing to the way the CD-ROM data is stored, you can only have a single CD game in each build but it can co-exist with other ROMs and be added in any order (the Python 3 builder will comply with the original instructions).
+Owing to the way PCEAdvance organises the CD-ROM data you can only have a single CD game in each build, but it can co-exist with other ROMs and be added in any order (the Python 3 builder will intelligently comply with the original instructions).
 
 To use CD-ROM support from Pogoshell just make a build with only the CD-ROM System ROM and use it as the plugin for ```.iso``` files (and ```.pce``` files).
 
