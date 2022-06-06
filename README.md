@@ -156,7 +156,7 @@ Huge thanks to Loopy for the incredible PocketNES, without it this emu would pro
 Hoe for the ROM-Builder.
 Thanks to:
 - Zeograd for a lot of help with the debugging.
-- Charles MacDonald (http://cgfm2.emuviews.com) &
+- Charles MacDonald (http://techno-junk.org) &
 - David Shadoff for a lot of the info.
 
 
@@ -169,4 +169,5 @@ https://twitter.com/TheRealFluBBa
 Some things to consider regarding this emulation: PCE has 64KB of VRAM which can be background and/or sprites, GBA has 64KB 
 background and 32KB sprite VRAM. The PCE CPU runs at either 1.78MHz (like the NES) or at 7.2MHz (all games seem to use the 
 fast mode), the GBA CPU runs at 16MHz.
+
 
