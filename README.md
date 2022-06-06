@@ -46,7 +46,7 @@ When the emulator starts use Up/Down to select game, then use B or A to start th
 To use as a Pogoshell plugin, first copy *pceadvance.gba* to the plugin folder then rename it to *pce.bin*. To make it work with US roms the name of the rom must not contain (J) or (j). In the same manner Japanese roms should preferably contain (J) or (j), most Japanese roms seem to run on US hardware anyway though.
 
 ## Multiplayer link play
-Go to the menu and change Controller: to read "Link2P"/"Link3P"/"Link4P", depending on how many Gameboys you will use. Once this is done on all GBAs, leave the menu on all slaves first, then the master, the game will restart and you can begin playing. If the link is lost (cable is pulled out, or a GBA is restarted), link must be re-initiated, this is done by a restart on the master and then selecting the appropriate link and leave the menu. The slaves doesn't have to do anything. Use an original Nintendo cable!
+Go to the menu and change Controller: to read *Link2P/Link3P/Link4P*, depending on how many Gameboys you will use. Once this is done on all GBAs, leave the menu on all slaves first, then the master, the game will restart and you can begin playing. If the link is lost (cable is pulled out, or a GBA is restarted), link must be re-initiated, this is done by a restart on the master and then selecting the appropriate link and leave the menu. The slaves doesn't have to do anything. Use an original Nintendo cable!
 
 ## PC Engine CD-ROM support
 To be able to use PC-Engine/TurboGrafx16 CD-ROM games you have to have a CD-ROM System ROM (BIOS) in your build. The legacy Win32 builder is not able to add CD-ROM data correctly, so use the Python 3 builder. The BIOS filename defaults to *bios.bin* but this can be overridden with **-b**.
