@@ -34,9 +34,9 @@ When the emulator starts use Up/Down to select game, then use B or A to start th
 - Unscaled modes: L & R buttons scroll the screen up and down
 - Scaled modes: Press L+SELECT to adjust the background
 - Sound:
-  - Off, no sound
-  - On, low quality low CPU usage
-  - On(Mixer), better quality more cpu usage
+  - Off - no sound
+  - On - low quality low CPU usage
+  - On (Mixer) - better quality more cpu usage
 - TimerIRQ: Some games use the TimerIRQ to play sounds and music, by disabling the timer you can make some games faster
 - EWRAM speed: this changes the waitstate on EWRAM between 2 and 1, this can probably damage your GBA and definitly uses more power, little to no speedgain. Don't use!
 - Speed modes: L+START switches between throttled/unthrottled/slomo mode
