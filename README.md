@@ -130,6 +130,6 @@ https://github.com/FluBBaOfWard
 https://twitter.com/TheRealFluBBa
 
 Some things to consider regarding this emulation:
-PCE has 64KB of VRAM which can be background and/or sprites,
-GBA has 64KB background and 32KB sprite VRAM.
-The PCE CPU runs at either 1.78MHz (like the NES) or at 7.2MHz (all games seem to use the fast mode), the GBA CPU runs at 16MHz.
+-PCE has 64KB of VRAM which can be background and/or sprites,
+-GBA has 64KB background and 32KB sprite VRAM.
+-The PCE CPU runs at either 1.78MHz (like the NES) or at 7.2MHz (all games seem to use the fast mode), the GBA CPU runs at 16MHz.
