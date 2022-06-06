@@ -69,25 +69,25 @@ TurboGrafx16 CD-ROM games you have to have a CD-ROM System ROM in your build. Th
 defaults to importing the file *bios.bin* but this can be overridden using the ```-b``` option (BIOS).
 
 Most CD-ROM games have data in track 2, and a very similar sized second copy of that data as the final track. All other 
-tracks are usually audio. PCEAdvance cannot play the audio so usually it only needs track 2. This can be extracted from a 
-typical ```.bin/.cue``` disc image using a tool such as Isobuster on Windows, or using *bchunk* on macOS or Linux. You 
-should include in the ISO filename the required system type: (CD), or (SCD) for Super CD-ROM, or (ACD) for Arcade CD-ROM. 
-You can determine this by consulting the lists published at https://www.necstasy.net
+tracks are usually audio. PCEAdvance cannot play the audio so usually it only needs the track 2 data in ```.iso``` format. 
+This can be extracted from a typical ```.bin/.cue``` disc image using a tool such as Isobuster on Windows, or using *bchunk* 
+on macOS or Linux. You should include in the ISO filename the required system type: (CD), or (SCD) for Super CD-ROM, or 
+(ACD) for Arcade CD-ROM. You can determine this by consulting the lists published at https://www.necstasy.net
 
-Some games do have multiple data tracks (excluding the last duplicate of track 2), and in this case they will need at 
-```.tcd``` track index file. Some are included with PCEAdvance, along with the specification. If you need to make new ones, 
-the TOC LBA values can be taken directly from https://www.necstasy.net and converted to hex. If the Python 3 builder finds a 
-```.tcd``` file with the same name as the added ```.iso``` file it will be added automatically. If the name is different, it 
-can be specified using the ```-t``` option.
+Some games do have multiple data tracks (excluding the last duplicate of track 2), for instance *Macross 2036*, and in this 
+case they will need at ```.tcd``` track index file. Some are included with PCEAdvance, along with the specification. If you 
+need to make new ones, the TOC LBA values can be taken directly from https://www.necstasy.net and converted to hex. If the 
+Python 3 builder finds a ```.tcd``` file with the same name as the added ```.iso``` file it will be added automatically. If 
+the name is different, it can be specified using the ```-t``` option.
 
 Owing to the way PCEAdvance organises the CD-ROM data you are limited to a single CD game in each build, but it can co-exist 
-with other ROMs and can be added in any order using the Python 3 builder.
+with other ROMs and it can be added in any order in the list using the Python 3 builder.
 
 An additional caveat is that the PSRAM on the EZ-Flash flashcarts is limited to 16MB. Unfortunately PSRAM cannot be accessed 
 if the emulator is run from NOR flash (32MB). This means that for Super CD-ROM support (which needs 192KB of cart RAM), 
 titles larger than 16MB must truncated by the Python builder using the ```-trim``` option so they will fit in PSRAM, losing 
-some game data in the proces. *Akumajou Dracula X: Chi no Rondo* is one such title. Though it does apparently work, it would 
-not be playable to completion.
+some game data in the process. *Akumajou Dracula X: Chi no Rondo* is one such title. Though it does apparently work, it 
+would not be playable to completion.
 
 To use CD-ROM support from Pogoshell just make a build with only the CD-ROM System ROM and use it as the plugin for 
 ```.iso``` files (and ```.pce``` files).
