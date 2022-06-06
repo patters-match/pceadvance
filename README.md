@@ -1,6 +1,6 @@
 # PCEAdvance V7.5
 
-This is a PC-Engine/TurboGrafx-16 emulator for the Gameboy Advance, rescued from the [Web Archive](https://web.archive.org/web/20150430211123/http://www.ndsretro.com/gbadown.html). It can also emulate some of the CD-ROM games, and Super CD-ROM if you've got an EZ-Flash III / IV / 3in1 flashcart or a SuperCard.
+This is a PC-Engine / TurboGrafx-16 emulator for the Gameboy Advance, rescued from the [Web Archive](https://web.archive.org/web/20150430211123/http://www.ndsretro.com/gbadown.html). It can also emulate some of the CD-ROM games, and Super CD-ROM if you've got an EZ-Flash III / IV / 3in1 flashcart or a SuperCard which provide some additional RAM.
 
 It's mostly slow but there are actually games that are enjoyable:
 - 1943 Kai (J) - Takes some time before it starts, but runs ok.
@@ -57,7 +57,7 @@ Some games do have multiple data tracks (excluding the last duplicate of track 2
 
 Owing to the way PCEAdvance organises the CD-ROM data you are limited to a single CD game in each build, but it can co-exist with other ROMs and can be added in any order using the Python 3 builder.
 
-An additional caveat is that the PSRAM on the EZ-Flash flashcarts for Super CD-ROM is limited to 16MB. PSRAM cannot be accessed if the emulator is copied to NOR flash (32MB) and executed from there. This means that titles larger than 16MB are automatically truncated by the Python builder so they fit in PSRAM, losing some game data in the proces. *Akumajou Dracula X: Chi no Rondo* is one such title. Though it does apparently work, it would not be able to be played to completion.
+An additional caveat is that the PSRAM on the EZ-Flash flashcarts is limited to 16MB. PSRAM cannot be accessed if the emulator is copied to NOR flash (32MB) and executed from there. This means that for Super CD-ROM support, titles larger than 16MB must truncated by the Python builder using the ```-trim``` option so they will fit in PSRAM, losing some game data in the proces. *Akumajou Dracula X: Chi no Rondo* is one such title. Though it does apparently work, it would not be played to completion.
 
 To use CD-ROM support from Pogoshell just make a build with only the CD-ROM System ROM and use it as the plugin for ```.iso``` files (and ```.pce``` files).
 
