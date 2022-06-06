@@ -87,7 +87,7 @@ An additional caveat is that the PSRAM on the EZ-Flash flashcarts is limited to 
 if the emulator is run from NOR flash (32MB). This means that for Super CD-ROM support (which needs 192KB of cart RAM), 
 titles larger than 16MB must truncated by the Python builder using the ```-trim``` option so they will fit in PSRAM, losing 
 some game data in the process. *Akumajou Dracula X: Chi no Rondo* is one such title. Though it does apparently work, it 
-would not be playable to completion.
+would not be playable to completion on EZ-Flash.
 
 To use CD-ROM support from Pogoshell just make a build with only the CD-ROM System ROM and use it as the plugin for 
 ```.iso``` files (and ```.pce``` files).
@@ -156,7 +156,7 @@ Huge thanks to Loopy for the incredible PocketNES, without it this emu would pro
 Hoe for the ROM-Builder.
 Thanks to:
 - Zeograd for a lot of help with the debugging.
-- Charles MacDonald (http://techno-junk.org) &
+- Charles MacDonald (http://cgfm2.emuviews.com) &
 - David Shadoff for a lot of the info.
 
 
@@ -169,5 +169,4 @@ https://twitter.com/TheRealFluBBa
 Some things to consider regarding this emulation: PCE has 64KB of VRAM which can be background and/or sprites, GBA has 64KB 
 background and 32KB sprite VRAM. The PCE CPU runs at either 1.78MHz (like the NES) or at 7.2MHz (all games seem to use the 
 fast mode), the GBA CPU runs at 16MHz.
-
 
