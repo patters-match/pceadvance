@@ -55,7 +55,7 @@ Most CD-ROM games have data in track 2, and a very similar sized second copy of 
 
 Some games do have multiple data tracks (excluding the last duplicate of track 2), and in this case they will need at ```.tcd``` track index file. Some are included with PCEAdvance, along with the specification. If you need to make new ones, the TOC LBA values can be taken directly from https://www.necstasy.net and converted to hex. If the Python 3 builder finds a ```.tcd``` file with the same name as the added ```.iso``` file it will be added automatically. If the name is different, it can be specified using the ```-t``` option.
 
-Owing to the way PCEAdvance organises the CD-ROM data you are limited to a single CD game in each build, but it can co-exist with other ROMs and can be added in any order using the Python 3 builder.
+Owing to the way PCEAdvance organises the CD-ROM data you are limited to a single CD game in each build, but it can co-exist with other ROMs and can be added in any order using the Python 3 builder. An additional caveat is that the PSRAM on the supported flashcarts for Super CD-ROM is limited to 16MB. PSRAM cannot be accessed if the emulator is copied to NOR (32MB). This means that titles larger than 16MB are automatically truncated by the Python builder so they fit in PSRAM, losing some game data in the proces. *Akumajou Dracula X: Chi no Rondo* is one such title. Though it does apparently work, it would not be able to be played to completion.
 
 To use CD-ROM support from Pogoshell just make a build with only the CD-ROM System ROM and use it as the plugin for ```.iso``` files (and ```.pce``` files).
 
