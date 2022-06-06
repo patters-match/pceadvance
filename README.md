@@ -92,7 +92,7 @@ would not be playable to completion on EZ-Flash.
 To use CD-ROM support from Pogoshell just make a build with only the CD-ROM System ROM and use it as the plugin for 
 ```.iso``` files (and ```.pce``` files).
 
-#### CD-ROM games tested so far
+#### CD-ROM games tested so far:
 - Addams Family (U): Ok, fullscreen images flicker.
 - Cosmic Fantasy 2 (U): Intro & game ok, can't fit whole game though.
 - Download 2 (J): Ok
