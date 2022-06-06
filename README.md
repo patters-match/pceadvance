@@ -108,7 +108,7 @@ To use CD-ROM support from Pogoshell just make a build with only the CD-ROM Syst
 ## Advanced
 
 ### SRAM
-The first 8KB of the GBA SRAM is the PC Engine SRAM, this can be exchanged between other PC Engine emulators, I think you have to change MagicEngine's INI to old format. Use a *CD-ROM System* ROM to manage your PC Engine SRAMs, press Select to access the SRAM manager. The US version is encrypted, don't forget to decrypt it.
+The first 8KB of the GBA SRAM is the PC Engine SRAM. This can be exchanged between other PC Engine emulators, I think you have to change MagicEngine's INI to old format. Use a *CD-ROM System* ROM to manage your PC Engine SRAMs, press Select to access the SRAM manager. The US version is encrypted, don't forget to decrypt it.
 
 ### GameBoy Player
 To be able to check for the GameBoy Player one must display the GameBoy Player logo, the easiest way to get it is by downloading it from my homepage.
