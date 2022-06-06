@@ -55,7 +55,7 @@ Most CD-ROM games have data in track 2, and a very similar sized second copy of 
 
 Some games do have multiple data tracks (excluding the last duplicate of track 2), and in this case they will need at ```.tcd``` track index file. Some are included with PCEAdvance, along with the specification. If you need to make new ones, the TOC LBA values can be taken directly from https://www.necstasy.net and converted to hex. If the Python 3 builder finds a ```.tcd``` file with the same name as the added ```.iso``` file it will be added automatically. If the name is different, it can be specified using the ```-t``` option.
 
-Owing to the way PCEAdvance organises the CD-ROM data you are limited to a single CD game in each build, but it can co-exist with other ROMs and can be added in any order using the Python 3 builder.
+Owing to the way PCEAdvance organises the CD-ROM data you are limited to a single CD game in each build, but it can co-exist with other ROMs and it can be added in any order in the list using the Python 3 builder.
 
 An additional caveat is that the PSRAM on the EZ-Flash flashcarts is limited to 16MB. Unfortunately PSRAM cannot be accessed if the emulator is run from NOR flash (32MB). This means that for Super CD-ROM support (which needs 192KB of cart RAM), titles larger than 16MB must truncated by the Python builder using the ```-trim``` option so they will fit in PSRAM, losing some game data in the proces. *Akumajou Dracula X: Chi no Rondo* is one such title. Though it does apparently work, it would not be playable to completion.
 
