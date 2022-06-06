@@ -156,7 +156,7 @@ Huge thanks to Loopy for the incredible PocketNES, without it this emu would pro
 Hoe for the ROM-Builder.
 Thanks to:
 - Zeograd for a lot of help with the debugging.
-- Charles MacDonald (http://cgfm2.emuviews.com) &
+- Charles MacDonald (http://techno-junk.org) &
 - David Shadoff for a lot of the info.
 
 
