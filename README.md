@@ -54,13 +54,13 @@ The first 8KB of the GBA SRAM is the PC Engine SRAM. This can be exchanged betwe
 ## PC Engine CD-ROM support
 The legacy Win32 builder prevents adding CD-ROM data correctly (it mistakenly pads the preceding ROM data), so use the new Python 3 builder instead. You can read the builder's full help text using the ```-h``` option. To be able to use PC Engine / TurboGrafx16 CD-ROM games you have to have a CD-ROM System ROM in your build. The builder will add this automatically, it defaults to importing the file *bios.bin* but this can be overridden using the ```-b``` option (BIOS).
 
-Most CD-ROM games have data in CD track 2, and a very similar sized second copy of that data as the final CD track. All other tracks are usually audio. PCEAdvance cannot play the audio so usually it only needs the track 2 data in ```.iso``` format. This can be extracted from a typical ```.bin/.cue``` disc image using a tool such as Isobuster for Windows, or using *bchunk* on macOS or Linux. You should include in the ISO filename the required system type: (CD), or (SCD) for Super CD-ROM², or (ACD) for Arcade CD-ROM². You can determine this by consulting the lists published at https://www.necstasy.net
+Most CD-ROM games have data in CD track 2, and a very similar sized second copy of that data as the final CD track. All other tracks are usually audio. PCEAdvance cannot play the audio so usually it only needs the track 2 data in ```.iso``` format. This can be extracted from a typical ```.bin/.cue``` disc image using a tool such as Isobuster for Windows, or using *bchunk* on macOS or Linux.
 
 Some games do have multiple data tracks (excluding the last duplicate of track 2), for instance *Macross 2036*, and in this case they will need at ```.tcd``` track index file. Some are included with PCEAdvance, along with the specification. If you need to make new ones, the TOC LBA values can be taken directly from https://www.necstasy.net and converted to hex. If the Python 3 builder finds a ```.tcd``` file with the same name as the added ```.iso``` file it will be added automatically. If the name is different, it can be specified using the ```-t``` option.
 
 Owing to the way PCEAdvance organises the CD-ROM data you are limited to a single CD game in each build, but it can co-exist with other ROMs and it can be added in any order in the list using the Python 3 builder.
 
-An additional caveat is that the PSRAM on the EZ-Flash flashcarts is limited to 16MB. Unfortunately PSRAM cannot be accessed if the emulator is run from NOR flash (32MB). This means that both the PCEAdvance compilation and its RAM additional requirement must fit within that 16MB. So Super CD-ROM² support compilations larger than 16384KB-192KB, and Arcade CD-ROM² titles larger than 16384KB-2240KB must be truncated by the Python builder using the ```-trim``` option so they will fit in PSRAM, losing some game data in the process. *Akumajou Dracula X: Chi no Rondo* is one such title. Though it does apparently work, it would not be playable to completion on EZ-Flash.
+An additional caveat is that the PSRAM on the EZ-Flash flashcarts is limited to 16MB. Unfortunately PSRAM cannot be accessed if the emulator is run from NOR flash (32MB). This means that both the PCEAdvance compilation and its RAM additional requirement must fit within that 16MB. So Super CD-ROM² support compilations larger than 16384KB-192KB, and Arcade CD-ROM² titles larger than 16384KB-2240KB must be truncated by the Python builder using the ```-trim``` option so they will fit in PSRAM, losing some game data in the process. *Akumajou Dracula X: Chi no Rondo* is one such title. Though it does apparently work, it would not be playable to completion on EZ-Flash. For this reason you label the ISO filename with the required system type: (CD) for CD-ROM², (SCD) for Super CD-ROM², or (ACD) for Arcade CD-ROM². You can determine this by consulting the lists published at https://www.necstasy.net
 
 To use CD-ROM support from Pogoshell just make a build with only the CD-ROM System ROM and use it as the plugin for ```.iso``` files (and ```.pce``` files).
 
@@ -112,10 +112,10 @@ To use CD-ROM support from Pogoshell just make a build with only the CD-ROM Syst
 - Shadow of the Beast (U): Ok, some flicker in intro
 
 #### Arcade CD-ROM² games tested so far (SuperCard / EZ-Flash builds only):
-- None confirmed working with EZ-Flash at least. Most data tracks are way too large. The only realistic contenders are:
-  - Mad Stalker: Hangs at loading screen
-  - Ginga Fukei Densetsu Sapphire: Hangs at white screen
-  - World Heroes 2: Hangs at black screen
+None confirmed working with EZ-Flash at least. Most data tracks are way too large. The only realistic contenders are:
+- Mad Stalker (5.1MB): Hangs at loading screen
+- Ginga Fukei Densetsu Sapphire (15.6MB): Hangs at white screen
+- World Heroes 2 (17.7MB): Hangs at black screen
 
 ## Credits
 Huge thanks to Loopy for the incredible PocketNES, without it this emulator would probably never have been made. Big thanks to Hoe for the ROM-Builder.
