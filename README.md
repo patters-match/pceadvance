@@ -1,6 +1,6 @@
 # PCEAdvance v7.5
 
-This is an NEC PC Engine / TurboGrafx-16 emulator for the Gameboy Advance, rescued from the [Web Archive](https://web.archive.org/web/20150430211123/http://www.ndsretro.com/gbadown.html). It can also emulate PC Engine CD-ROM² games, Super CD-ROM², and even Arcade CD-ROM² titles if you have an EZ-Flash III / IV / 3in1 flashcart or a SuperCard, which can provide the required additional RAM.
+This is an NEC PC Engine / TurboGrafx-16 emulator for the Gameboy Advance with support for PC Engine CD-ROM², rescued from the [Web Archive](https://web.archive.org/web/20150430211123/http://www.ndsretro.com/gbadown.html). It can also emulate Super CD-ROM², and even Arcade CD-ROM² titles if you have an EZ-Flash III / IV / 3in1 flashcart or a SuperCard, which can provide the required additional RAM.
 
 It's mostly slow but there are actually games that are enjoyable:
 - 1943 Kai (J) - Takes some time before it starts, but runs ok
@@ -49,10 +49,10 @@ To use as a Pogoshell plugin, first copy *pceadvance.gba* to the plugin folder t
 Go to the menu and change Controller: to read *Link2P/Link3P/Link4P*, depending on how many Gameboys you will use. Once this is done on all GBAs, leave the menu on all slaves first, then the master, the game will restart and you can begin playing. If the link is lost (cable is pulled out, or a GBA is restarted), link must be re-initiated, this is done by a restart on the master and then selecting the appropriate link and leave the menu. The slaves doesn't have to do anything. Use an original Nintendo cable!
 
 ## SRAM
-The first 8KB of the GBA SRAM is the PC Engine SRAM. This can be exchanged between other PC Engine emulators, I think you have to change MagicEngine's INI to old format. Use a *CD-ROM System* ROM to manage your PC Engine SRAMs, press Select to access the SRAM manager. The US version is encrypted, don't forget to decrypt it.
+The first 8KB of the GBA SRAM is the PC Engine SRAM. This can be exchanged between other PC Engine emulators, I think you have to change MagicEngine's INI to old format. Use a CD-ROM System ROM to manage your PC Engine SRAMs, press Select to access the SRAM manager. The US version is encrypted, don't forget to decrypt it.
 
 ## PC Engine CD-ROM support
-The legacy Win32 builder prevents adding CD-ROM data correctly (it mistakenly pads the preceding ROM data), so use the new Python 3 builder instead. You can read the builder's full help text using the ```-h``` option. To be able to use PC Engine / TurboGrafx16 CD-ROM games you have to have a *CD-ROM System* ROM in your build. The builder will add this automatically, it defaults to importing the file *bios.bin* but this can be overridden using the ```-b``` option (BIOS).
+The legacy Win32 builder prevents adding CD-ROM data correctly (it mistakenly pads the preceding ROM data), so use the new Python 3 builder instead. You can read the builder's full help text using the ```-h``` option. To be able to use PC Engine / TurboGrafx16 CD-ROM games you have to have a CD-ROM System ROM in your build. The builder will add this automatically, it defaults to importing the file *bios.bin* but this can be overridden using the ```-b``` option (BIOS).
 
 Most CD-ROM games have data in CD track 2, and a very similar sized second copy of that data as the final CD track. All other tracks are usually audio. PCEAdvance cannot play the audio so usually it only needs the track 2 data in ```.iso``` format. This can be extracted from a typical ```.bin/.cue``` disc image using a tool such as Isobuster for Windows, or using *bchunk* on macOS or Linux. You should include in the ISO filename the required system type: (CD), or (SCD) for Super CD-ROM², or (ACD) for Arcade CD-ROM². You can determine this by consulting the lists published at https://www.necstasy.net
 
@@ -60,7 +60,7 @@ Some games do have multiple data tracks (excluding the last duplicate of track 2
 
 Owing to the way PCEAdvance organises the CD-ROM data you are limited to a single CD game in each build, but it can co-exist with other ROMs and it can be added in any order in the list using the Python 3 builder.
 
-An additional caveat is that the PSRAM on the EZ-Flash flashcarts is limited to 16MB. Unfortunately PSRAM cannot be accessed if the emulator is run from NOR flash (32MB). This means that for Super CD-ROM² support (which needs 192KB of cart RAM), titles larger than 16MB must truncated by the Python builder using the ```-trim``` option so they will fit in PSRAM, losing some game data in the process. *Akumajou Dracula X: Chi no Rondo* is one such title. Though it does apparently work, it would not be playable to completion on EZ-Flash.
+An additional caveat is that the PSRAM on the EZ-Flash flashcarts is limited to 16MB. Unfortunately PSRAM cannot be accessed if the emulator is run from NOR flash (32MB). This means that both the PCEADvance compilation and its RAM additional requirement must fit within that 16MB. So Super CD-ROM² support compilations larger than 16384KB-192KB must truncated, and Arcade CD-ROM² titles larger than 16384KB-2240KB must be truncated by the Python builder using the ```-trim``` option so they will fit in PSRAM, losing some game data in the process. *Akumajou Dracula X: Chi no Rondo* is one such title. Though it does apparently work, it would not be playable to completion on EZ-Flash.
 
 To use CD-ROM support from Pogoshell just make a build with only the CD-ROM System ROM and use it as the plugin for ```.iso``` files (and ```.pce``` files).
 
@@ -106,6 +106,12 @@ To use CD-ROM support from Pogoshell just make a build with only the CD-ROM Syst
 - Riot Zone: Ok
 - R-Type Complete CD (J): Ok
 - Shadow of the Beast (U): Ok, some flicker in intro
+
+#### Arcade CD-ROM² games tested so far (SuperCard / EZ-Flash builds only):
+- None confirmed working with EZ-Flash at least. Most data tracks are way too large. The only realistic contenders are:
+  - Mad Stalker: Hangs at loading screen
+  - Ginga Fukei Densetsu Sapphire: Hangs at white screen
+  - World Heroes 2: Hangs at black screen
 
 ## Credits
 Huge thanks to Loopy for the incredible PocketNES, without it this emulator would probably never have been made. Big thanks to Hoe for the ROM-Builder.
