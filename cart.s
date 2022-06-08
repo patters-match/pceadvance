@@ -128,7 +128,7 @@ tbloop2
 	beq noscd
 
 	mov r1,#0				;clear Super-CD_RAM - PSRAM will be dirty after a soft reset
-	mov r2,#0xC000
+	mov r2,#0xC000			;(192KB * 1024) / 4 , since 4 byte words
 	bl memset_
 
 	mov r1,r0
