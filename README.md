@@ -94,10 +94,10 @@ with other ROMs and it can be added in any order in the list using the Python 3 
 Note that PSRAM on the EZ-Flash flashcarts is limited to 16MB. Unfortunately PSRAM cannot be addressed if the emulator is 
 run from NOR flash (32MB). This means that both the PCEAdvance compilation and its additional RAM requirement must fit 
 within that 16MB. Oversized compilations can be truncated to fit by the builder using the ```-trim``` option, losing some 
-game data in the process. *Akumajou Dracula X: Chi no Rondo* (20.8MB) is one such title. Although the trimmed game does 
-apparently work, it would not be playable to completion on EZ-Flash. For this reason you should label your ISO filenames 
-with the required system type: (CD) for CD-ROM², (SCD) for Super CD-ROM², or (ACD) for Arcade CD-ROM². You can determine 
-this by consulting the lists published at https://www.necstasy.net
+game data in the process. For this reason you should label your ISO filenames with the required system type: (CD) for 
+CD-ROM², (SCD) for Super CD-ROM², or (ACD) for Arcade CD-ROM². You can determine this by consulting the lists published at 
+https://www.necstasy.net. *Akumajou Dracula X: Chi no Rondo* (20.8MB) is one such title. Although the trimmed game does 
+apparently work, it would not be playable to completion on EZ-Flash.
 
 #### CD-ROM² games tested so far:
 - Addams Family (U): Ok, fullscreen images flicker
