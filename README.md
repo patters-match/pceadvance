@@ -91,7 +91,7 @@ added ```.iso``` file it will be added automatically. If the name is different, 
 Owing to the way PCEAdvance organises the CD-ROM data you are limited to a single CD game in each build, but it can co-exist 
 with other ROMs and it can be added in any order in the list using the Python 3 builder.
 
-Note that the PSRAM on the EZ-Flash flashcarts is limited to 16MB. Unfortunately PSRAM cannot be accessed if the emulator is 
+Note that PSRAM on the EZ-Flash flashcarts is limited to 16MB. Unfortunately PSRAM cannot be addressed if the emulator is 
 run from NOR flash (32MB). This means that both the PCEAdvance compilation and its additional RAM requirement must fit 
 within that 16MB. Oversized compilations can be truncated to fit by the Python builder using the ```-trim``` option so they 
 will fit in PSRAM, losing some game data in the process. *Akumajou Dracula X: Chi no Rondo* (20.8MB) is one such title. 
