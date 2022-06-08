@@ -71,10 +71,12 @@ access the SRAM manager. The US version is encrypted, don't forget to decrypt it
 ## PC Engine CD-ROM support
 Compilations built with the legacy Win32 builder included with PCEAdvance 7.5 cannot have CD-ROM data appended correctly. 
 This builder mistakenly pads the preceding ROM data which breaks CD support. Use the new Python 3 builder instead. You can 
-read the builder's full help text using the ```-h``` option. To be able to use PC Engine / TurboGrafx16 CD-ROM games you 
-have to have a CD-ROM System ROM in your build. The builder will add this automatically, it defaults to importing the file 
-*bios.bin* but this can be overridden using the ```-b``` option (BIOS). To use CD-ROM support from Pogoshell just make a 
-compilation with only a CD-ROM System ROM and use it as the plugin for ```.iso``` and ```.pce``` files.
+read the builder's full help text using the ```-h``` option.
+
+To be able to use PC Engine / TurboGrafx16 CD-ROM games you have to have a CD-ROM System ROM in your build. The builder will 
+add this automatically, it defaults to importing the file *bios.bin* but this can be overridden using the ```-b``` option 
+(BIOS). To use CD-ROM support from Pogoshell just make a compilation with only a CD-ROM System ROM and use it as the plugin 
+for ```.iso``` and ```.pce``` files.
 
 Most CD-ROM games have their data stored in CD track 2, and have a very similar sized second copy of that data as the final 
 CD track. All other tracks are usually audio. PCEAdvance cannot play the audio so usually it only needs a game's track 2 
