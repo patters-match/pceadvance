@@ -77,7 +77,7 @@ To use CD-ROM support from Pogoshell just make a build with only the CD-ROM Syst
 - Macross 2036 (J): Ok
 - MineSweeper (J): Ok
 - Monster Lair: Ok
-- Rainbow Islands (J): Very Slow
+- Rainbow Islands (J): Very slow
 - Rayxanber II (U): Ok
 - Red Alert (J): Ok
 - Road Spirits: Ok
