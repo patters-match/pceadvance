@@ -87,17 +87,16 @@ Some games do have multiple data tracks (excluding the last duplicate of track 2
 case they will need a ```.tcd``` track index file. Some are included with PCEAdvance, along with details of the 
 specification. If you need to make new ones, the Table of Contents (TOC) LBA values can be taken directly from 
 https://www.necstasy.net and converted to hex. If the Python 3 builder finds a ```.tcd``` file with the same name as the 
-added ```.iso``` file it will be added automatically. If the name is different, it can be manually specified using the 
-```-t``` option.
+```.iso``` file it will be added automatically. The track index can also be manually specified using the ```-t``` option.
 
 Owing to the way PCEAdvance organises the CD-ROM data you are limited to a single CD game in each build, but it can co-exist 
 with other ROMs and it can be added in any order in the list using the Python 3 builder.
 
 Note that PSRAM on the EZ-Flash flashcarts is limited to 16MB. Unfortunately PSRAM cannot be addressed if the emulator is 
 run from NOR flash (32MB). This means that both the PCEAdvance compilation and its additional RAM requirement must fit 
-within that 16MB. Oversized compilations can be truncated to fit by the builder using the ```-trim``` option, losing some 
-game data in the process. For this reason you should label your ISO filenames with the required system type: (CD) for 
-CD-ROM², (SCD) for Super CD-ROM², or (ACD) for Arcade CD-ROM². You can determine this by consulting the lists published at 
+within that 16MB. Oversized compilations can be truncated by the builder using the ```-trim``` option, losing some game data 
+in the process. For this reason you should label your ISO filenames with the required system type: (CD) for CD-ROM², (SCD) 
+for Super CD-ROM², or (ACD) for Arcade CD-ROM². You can determine this by consulting the lists published at 
 https://www.necstasy.net. *Akumajou Dracula X: Chi no Rondo* (20.8MB) is one such title. Although the trimmed game does 
 apparently work, it would not be playable to completion on EZ-Flash.
 
