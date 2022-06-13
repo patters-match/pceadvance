@@ -81,7 +81,8 @@ for ```.iso``` and ```.pce``` files.
 Most CD-ROM games have their data stored in CD track 2, and have a very similar sized second copy of that data as the final 
 CD track. All other tracks are usually audio. PCEAdvance cannot play the audio so usually it only needs a game's track 2 
 data in ```.iso``` format. This can be extracted from a typical ```.bin/.cue``` disc image using a tool such as Isobuster 
-for Windows, or using *bchunk* on macOS or Linux.
+for Windows, or using *bchunk* on macOS or Linux. Add ```.iso``` files using the builder in the same way as you would add a 
+regular ```.pce``` file.
 
 Some games do have multiple data tracks (excluding the last duplicate of track 2), for instance *Macross 2036*, and in this 
 case they will need a ```.tcd``` track index file. Some are included with PCEAdvance, along with details of the 
