@@ -1,10 +1,8 @@
 # PCEAdvance v7.5
 
-This is an NEC PC Engine / TurboGrafx-16 emulator for the Gameboy Advance with support for PC Engine CD-ROM², rescued from 
-the [Web Archive](https://web.archive.org/web/20150430211123/http://www.ndsretro.com/gbadown.html).
+This is an NEC PC Engine / TurboGrafx-16 emulator for the Gameboy Advance with support for PC Engine CD-ROM², rescued from the [Web Archive](https://web.archive.org/web/20150430211123/http://www.ndsretro.com/gbadown.html).
 
-It can also make use of additional RAM in an EZ-Flash III / IV / 3in1 or SuperCard flashcart to emulate Super CD-ROM² 
-(+192KB), and even Arcade CD-ROM² titles (+2240KB).
+It can also make use of additional RAM in an EZ-Flash III / IV / 3in1 or SuperCard flashcart to emulate Super CD-ROM² (+192KB), and even Arcade CD-ROM² titles (+2240KB).
 
 It's mostly slow but there are actually games that are enjoyable:
 - 1943 Kai (J) - Takes some time before it starts, but runs ok
@@ -30,14 +28,10 @@ It's mostly slow but there are actually games that are enjoyable:
 - Tatsujin (J) - Good speed
 - Tenseiryu Saint Dragon (J) - Good speed
 
-These are just suggestions, please try what ever game you like. A lot of US games don't work because they are encrypted, use 
-PCEToy to decrypt these before you use them. Also remember to click "US rom" in the legacy Win32 builder app if you want 
-them to work. If using the Python 3 builder make sure US ROM filenames contain (U) or (USA). Don't use overdumps as these 
-are evil on PC Engine.
+These are just suggestions, please try what ever game you like. A lot of US games don't work because they are encrypted, use PCEToy to decrypt these before you use them. Also remember to click "US rom" in the legacy Win32 builder app if you want them to work. If using the Python 3 builder make sure US ROM filenames contain (U) or (USA). Don't use overdumps as these are evil on PC Engine.
 
 ## How to use
-When the emulator starts use Up/Down to select game, then use B or A to start the game selected. Press L+R to open the menu, 
-A to choose, B (or L+R again) to cancel.
+When the emulator starts use Up/Down to select game, then use B or A to start the game selected. Press L+R to open the menu, A to choose, B (or L+R again) to cancel.
 - HScroll: (Manual) Lets you scroll the screen with the L & R buttons
 - Unscaled modes: L & R buttons scroll the screen up and down
 - Scaled modes: Press L+SELECT to adjust the background
@@ -46,60 +40,31 @@ A to choose, B (or L+R again) to cancel.
   - *On* - low quality low CPU usage
   - *On (Mixer)* - better quality more cpu usage
 - TimerIRQ: Some games use the TimerIRQ to play sounds and music, by disabling the timer you can make some games faster
-- EWRAM speed: this changes the waitstate on EWRAM between 2 and 1, this can probably damage your GBA and definitly uses 
-more power, little to no speedgain. Don't use!
+- EWRAM speed: this changes the waitstate on EWRAM between 2 and 1, this can probably damage your GBA and definitly uses more power, little to no speedgain. Don't use!
 - Speed modes: L+START switches between throttled/unthrottled/slomo mode
 - Sleep: START+SELECT wakes up from sleep mode (activated from menu or 5/10/30 minutes of inactivity)
 
 ## Pogoshell
-To use as a Pogoshell plugin, first copy *pceadvance.gba* to the plugin folder then rename it to *pce.bin*. To make it work 
-with US roms the name of the rom must not contain (J) or (j). In the same manner Japanese roms should preferably contain (J) 
-or (j), most Japanese roms seem to run on US hardware anyway though.
+To use as a Pogoshell plugin, first copy *pceadvance.gba* to the plugin folder then rename it to *pce.bin*. To make it work with US roms the name of the rom must not contain (J) or (j). In the same manner Japanese roms should preferably contain (J) or (j), most Japanese roms seem to run on US hardware anyway though.
 
 ## Multiplayer link play
-Go to the menu and change Controller: to read *Link2P/Link3P/Link4P*, depending on how many Gameboys you will use. Once this 
-is done on all GBAs, leave the menu on all slaves first, then the master, the game will restart and you can begin playing. 
-If the link is lost (cable is pulled out, or a GBA is restarted), link must be re-initiated, this is done by a restart on 
-the master and then selecting the appropriate link and leave the menu. The slaves doesn't have to do anything. Use an 
-original Nintendo cable!
+Go to the menu and change Controller: to read *Link2P/Link3P/Link4P*, depending on how many Gameboys you will use. Once this is done on all GBAs, leave the menu on all slaves first, then the master, the game will restart and you can begin playing. If the link is lost (cable is pulled out, or a GBA is restarted), link must be re-initiated, this is done by a restart on the master and then selecting the appropriate link and leave the menu. The slaves doesn't have to do anything. Use an original Nintendo cable!
 
 ## SRAM
-The first 8KB of the GBA SRAM is the PC Engine SRAM. This can be exchanged between other PC Engine emulators, I think you 
-have to change MagicEngine's INI to old format. Use a CD-ROM System ROM to manage your PC Engine SRAMs, press Select to 
-access the SRAM manager. The US version is encrypted, don't forget to decrypt it.
+The first 8KB of the GBA SRAM is the PC Engine SRAM. This can be exchanged between other PC Engine emulators, I think you have to change MagicEngine's INI to old format. Use a CD-ROM System ROM to manage your PC Engine SRAMs, press Select to access the SRAM manager. The US version is encrypted, don't forget to decrypt it.
 
 ## PC Engine CD-ROM support
-Compilations built with the legacy Win32 builder included with PCEAdvance 7.5 cannot have CD-ROM data appended correctly. 
-This builder mistakenly pads the preceding ROM data which breaks CD support. Use the new Python 3 builder instead. You can 
-read the builder's full help text using the ```-h``` option.
+Compilations built with the legacy Win32 builder included with PCEAdvance 7.5 cannot have CD-ROM data appended correctly. This builder mistakenly pads the preceding ROM data which breaks CD support. Use the new Python 3 builder instead. You can read the builder's full help text using the ```-h``` option.
 
-To be able to use PC Engine / TurboGrafx16 CD-ROM games you have to have a CD-ROM System ROM in your build. The builder will 
-add this automatically, it defaults to importing the file *bios.bin* but this can be overridden using the ```-b``` option 
-(BIOS). To use CD-ROM support from Pogoshell just make a compilation with only a CD-ROM System ROM and use it as the plugin 
-for ```.iso``` and ```.pce``` files.
+To be able to use PC Engine / TurboGrafx16 CD-ROM games you have to have a CD-ROM System ROM in your build. The builder will add this automatically, it defaults to importing the file *bios.bin* but this can be overridden using the ```-b``` option (BIOS). To use CD-ROM support from Pogoshell just make a compilation with only a CD-ROM System ROM and use it as the plugin for ```.iso``` and ```.pce``` files.
 
-Most CD-ROM games have their data stored in CD track 2, and have a very similar sized second copy of that data as the final 
-CD track. All other tracks are usually audio. PCEAdvance cannot play the audio so usually it only needs a game's track 2 
-data in ```.iso``` format. This can be extracted from a typical ```.bin/.cue``` disc image using a tool such as Isobuster 
-for Windows, or using *bchunk* on macOS or Linux. Add ```.iso``` files using the builder in the same way as you would add a 
-regular ```.pce``` file.
+Most CD-ROM games have their data stored in CD track 2, and have a very similar sized second copy of that data as the final CD track. All other tracks are usually audio. PCEAdvance cannot play the audio so usually it only needs a game's track 2 data in ```.iso``` format. This can be extracted from a typical ```.bin/.cue``` disc image using a tool such as Isobuster for Windows, or using *bchunk* on macOS or Linux. Add ```.iso``` files using the builder in the same way as you would add a regular ```.pce``` file.
 
-Some games do have multiple data tracks (excluding the last duplicate of track 2), for instance *Macross 2036*, and in this 
-case they will need a ```.tcd``` track index file. Some are included with PCEAdvance, along with details of the 
-specification. If you need to make new ones, the Table of Contents (TOC) LBA values can be taken directly from 
-https://www.necstasy.net and converted to hex. If the Python 3 builder finds a ```.tcd``` file with the same name as the 
-```.iso``` file it will be added automatically. The track index can also be manually specified using the ```-t``` option.
+Some games do have multiple data tracks (excluding the last duplicate of track 2), for instance *Macross 2036*, and in this case they will need a ```.tcd``` track index file. Some are included with PCEAdvance, along with details of the specification. If you need to make new ones, the Table of Contents (TOC) LBA values can be taken directly from https://www.necstasy.net and converted to hex. If the Python 3 builder finds a ```.tcd``` file with the same name as the ```.iso``` file it will be added automatically. The track index can also be manually specified using the ```-t``` option.
 
-Owing to the way PCEAdvance organises the CD-ROM data you are limited to a single CD game in each build, but it can co-exist 
-with other ROMs and it can be added in any order in the list using the Python 3 builder.
+Owing to the way PCEAdvance organises the CD-ROM data you are limited to a single CD game in each build, but it can co-exist with other ROMs and it can be added in any order in the list using the Python 3 builder.
 
-Note that PSRAM on the EZ-Flash flashcarts is limited to 16MB. Unfortunately PSRAM cannot be addressed if the emulator is 
-run from NOR flash (32MB). This means that both the PCEAdvance compilation and its additional RAM requirement must fit 
-within that 16MB. Oversized compilations can be truncated by the builder using the ```-trim``` option, losing some game data 
-in the process. For this reason you should label your ISO filenames with the required system type: (CD) for CD-ROM², (SCD) 
-for Super CD-ROM², or (ACD) for Arcade CD-ROM². You can determine this by consulting the lists published at 
-https://www.necstasy.net. *Akumajou Dracula X: Chi no Rondo* (20.8MB) is one such title. Although the trimmed game does 
-apparently work, it would not be playable to completion on EZ-Flash.
+Note that PSRAM on the EZ-Flash flashcarts is limited to 16MB. Unfortunately PSRAM cannot be addressed if the emulator is run from NOR flash (32MB). This means that both the PCEAdvance compilation and its additional RAM requirement must fit within that 16MB. Oversized compilations can be truncated by the builder using the ```-trim``` option, losing some game data in the process. For this reason you should label your ISO filenames with the required system type: (CD) for CD-ROM², (SCD) for Super CD-ROM², or (ACD) for Arcade CD-ROM². You can determine this by consulting the lists published at https://www.necstasy.net. *Akumajou Dracula X: Chi no Rondo* (20.8MB) is one such title. Although the trimmed game does apparently work, it would not be playable to completion on EZ-Flash.
 
 #### CD-ROM² games tested so far:
 - Addams Family (U): Ok, fullscreen images flicker
@@ -155,8 +120,7 @@ None confirmed working with EZ-Flash at least. Most data tracks are way too larg
 - World Heroes 2 (17.7MB): Hangs at black screen
 
 ## Credits
-Huge thanks to Loopy for the incredible PocketNES, without it this emulator would probably never have been made. Big thanks 
-to Hoe for the ROM-Builder.
+Huge thanks to Loopy for the incredible PocketNES, without it this emulator would probably never have been made. Big thanks to Hoe for the ROM-Builder.
 Thanks to:
 - Zeograd for a lot of help with the debugging
 - [Charles MacDonald](http://techno-junk.org) &
@@ -169,7 +133,8 @@ https://github.com/FluBBaOfWard
 
 https://twitter.com/TheRealFluBBa
 
-Some things to consider regarding this emulation: PCE has 64KB of VRAM which can be background and/or sprites, GBA has 64KB 
-background and 32KB sprite VRAM. The PCE CPU runs at either 1.78MHz (like the NES) or at 7.2MHz (all games seem to use the 
-fast mode), the GBA CPU runs at 16MHz.
-
+Some things to consider regarding this emulation:
+PC Engine|Gameboy Advance
+:----|:----
+64KB of VRAM which can be background and/or sprites|64KB background VRAM and 32KB sprite VRAM
+CPU runs at either 1.78MHz (like the NES) or at 7.2MHz <br />all games seem to use the fast mode|CPU runs at 16MHz
