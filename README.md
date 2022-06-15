@@ -7,6 +7,8 @@ It can also use additional RAM in an EZ-Flash III or SuperCard flashcart to emul
 ### Enhancement
 In June 2022 I (patters) forked the sourcecode to [create a version](https://github.com/patters-syno/pceadvance/releases/tag/v7.5-ez4) with the additional RAM support working for EZ-Flash IV and EZ-Flash 3in1 flashcarts.
 
+### Compatibility
+
 It's mostly slow but there are actually games that are enjoyable:
 - 1943 Kai (J) - Takes some time before it starts, but runs ok
 - Aero Blasters (U) - ok speed. (spr 6)
