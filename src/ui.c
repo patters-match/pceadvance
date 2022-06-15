@@ -250,7 +250,7 @@ void drawui1() {
 	char str[30];
 
 	cls(1);
-	drawtext(18,"Powered by XGFLASH2.com 2005",0);
+	drawtext(18,"Powered by XGFLASH2.com 2022",0);
 	if(pogoshell) i=1;
 	strmerge(str,emuname[i],"v7.5 on ");
 	strmerge(str,str,hostname[gbaversion]);
