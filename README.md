@@ -35,17 +35,24 @@ These are just suggestions, please try what ever game you like. A lot of US game
 
 ## How to use
 When the emulator starts use Up/Down to select game, then use B or A to start the game selected. Press L+R to open the menu, A to choose, B (or L+R again) to cancel.
-- HScroll: (Manual) Lets you scroll the screen with the L & R buttons
-- Unscaled modes: L & R buttons scroll the screen up and down
-- Scaled modes: Press L+SELECT to adjust the background
-- Sound:
-  - *Off* - no sound
-  - *On* - low quality low CPU usage
-  - *On (Mixer)* - better quality more cpu usage
-- TimerIRQ: Some games use the TimerIRQ to play sounds and music, by disabling the timer you can make some games faster
-- EWRAM speed: this changes the waitstate on EWRAM between 2 and 1, this can probably damage your GBA and definitly uses more power, little to no speedgain. Don't use!
-- Speed modes: L+START switches between throttled/unthrottled/slomo mode
-- Sleep: START+SELECT wakes up from sleep mode (activated from menu or 5/10/30 minutes of inactivity)
+
+### Settings:
+	HScroll: (Manual) Lets you scroll the screen with the L & R buttons
+	Unscaled modes: L & R buttons scroll the screen up and down
+	Scaled modes: Press L+SELECT to adjust the background
+	Sound:
+		Off: no sound
+		On: low quality low CPU usage
+		On: (Mixer) - better quality more cpu usage
+	TimerIRQ:
+		Some games use the TimerIRQ to play sounds and music, by disabling the timer
+		you can make some games faster
+	EWRAM speed:
+		This changes the waitstate on EWRAM between 2 and 1, this can probably damage
+		your GBA and definitly uses more power, little to no speedgain. Don't use!
+	Speed modes: L+START switches between throttled/unthrottled/slomo mode
+	Sleep: START+SELECT wakes up from sleep mode (activated from menu or 5/10/30
+	       minutes of inactivity)
 
 ## Pogoshell
 To use as a Pogoshell plugin, first copy *pceadvance.gba* to the plugin folder then rename it to *pce.bin*. To make it work with US roms the name of the rom must not contain (J) or (j). In the same manner Japanese roms should preferably contain (J) or (j), most Japanese roms seem to run on US hardware anyway though.
