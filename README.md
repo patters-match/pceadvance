@@ -5,7 +5,14 @@ This is an NEC PC Engine / TurboGrafx-16 emulator by FluBBa for the Gameboy Adva
 It can also use additional RAM in an EZ-Flash III or SuperCard flashcart to emulate Super CD-ROM² (+192KB), and even Arcade CD-ROM² titles (+2240KB).
 
 ### Enhancement
-In June 2022 I (patters) forked the sourcecode to [create a version](https://github.com/patters-syno/pceadvance/releases/tag/v7.5-ez4) with the additional RAM support working for EZ-Flash IV and EZ-Flash 3in1 flashcarts.
+In June 2022 I (patters) forked the source code to [create a version](https://github.com/patters-syno/pceadvance/releases/tag/v7.5-ez4) with the additional RAM support working for EZ-Flash IV and EZ-Flash 3in1 flashcarts.
+
+Originally, PCEAdvance enabled the EZ-Flash III PSRAM [here in **cart.s**](https://github.com/patters-syno/pceadvance/blob/65c94787246d6f8c3655c55d0106812b51fa41fc/src/cart.s#L542), which is an ASM implementation of the _OpenRamWrite()_ function as seen in the [source code published by EZ-Team](https://github.com/ez-flash/ez3pda/blob/1d16559caf7a94dff6d8fdcf94f572bc09b36ae4/hard.cpp#L39). I scanned through the EZ-Flash IV firmware binary and found that _OpenWrite()_ preceded _OpenRamWrite()_ just as it does in the EZ-Team source code. I also compared various implementations of PSRAM access for EZ-Flash IV and EZ-Flash 3in1 which were written for the Nintendo DS:
+- The DS [RAM Unlocking API](https://forum.gbadev.org/viewtopic.php?f=18&t=13023) - dead links now, but this library can be found in **ram.c** in [memtestARM](http://pineight.com/ds/#memtestARM)
+- Dartz150's EZFlash3in1 [access library](https://github.com/Dartz150/EZFlash3in1/blob/eda7a82ef8ded7103f030a5cdf2d0d4d834b735e/dsCard.cpp#L574)
+- Martin (NO$GBA) Korth's [cartridge port RAM documentation](https://www.problemkaputt.de/gbatek-ds-cart-expansion-ram.htm)
+
+They all have in common that they use that same _OpenWrite()_ function to unlock the RAM, but _OpenRamWrite()_ is not used. So I made [that substitution in **cart.s**](https://github.com/patters-syno/pceadvance/blob/e964f93a16d97ecd5427c6353c78da1e7db14d09/src/cart.s#L547), which worked. I then added [EZ-Flash-specific exit code](https://github.com/patters-syno/pceadvance/blob/ez4/src/visoly.s) to replace **visoly.s**. I also added [clearing of the 192KB of PSRAM](https://github.com/patters-syno/pceadvance/blob/e964f93a16d97ecd5427c6353c78da1e7db14d09/src/cart.s#L130) before it is used as emulator RAM, since EZ-Flash firmware will not do this automatically so it could contain garbage from a previous game after exit back to the menu. This fixed the observed issue of Super CD-ROM² support only functioning directly after a clean power-on boot.
 
 ### Compatibility
 
