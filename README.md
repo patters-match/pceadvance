@@ -14,6 +14,8 @@ Originally, PCEAdvance enabled the EZ-Flash III PSRAM [here in **cart.s**](https
 
 They all have in common that they use that same _OpenWrite()_ function to unlock the RAM, but _OpenRamWrite()_ is not used. So I made that function substitution [in PCEAdvance **cart.s**](https://github.com/patters-syno/pceadvance/blob/e964f93a16d97ecd5427c6353c78da1e7db14d09/src/cart.s#L547), which awakened the PSRAM. I then added [EZ-Flash-specific exit code](https://github.com/patters-syno/pceadvance/blob/ez4/src/visoly.s) to replace **visoly.s**. I also added [clearing of the 192KB of PSRAM](https://github.com/patters-syno/pceadvance/blob/e964f93a16d97ecd5427c6353c78da1e7db14d09/src/cart.s#L130) before it is used as emulator RAM, since EZ-Flash firmware will [not do this automatically](https://www.dwedit.org/dwedit_board/viewtopic.php?pid=3349#p3349) so it could contain garbage from a previous game after exit back to the menu. This resolved the issue of Super CD-ROM² support only functioning directly after a power-on.
 
+It is unfortunately not possible to add EZ-Flash Omega support, despite the open nature of its [technical documentation](https://github.com/ez-flash/omega-kernel/blob/master/docs/EZ-FLASH%20OMEGA%20DOCUMENT.pdf). As [confirmed by EZ-Team](https://gbatemp.net/threads/ezflash-omega-writing-in-psram.580813/post-9328539), PSRAM is not exposed for access once in game mode.
+
 ### Compatibility
 
 It's mostly slow but there are actually games that are enjoyable:
