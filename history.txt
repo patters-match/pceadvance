@@ -2,7 +2,7 @@ PCEAdvance revision history
 -=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 V7.5_EZ4 - 2022-06-05 (patters)
-   Supports using EZ-Flash IV and EZ-Flash 3in1 PSRAM for Super CD-ROM support
+   Supports using EZ-Flash IV and EZ-Flash 3in1 PSRAM for Super CD-ROM games
    Supports exit to EZ-Flash menu
 
 V7.5 - 2005-10-14 (FluBBa)
