@@ -5,7 +5,10 @@ This is an NEC PC Engine / TurboGrafx-16 emulator by FluBBa for the Gameboy Adva
 It can also use additional RAM in an EZ-Flash III or SuperCard flashcart to emulate Super CD-ROM² (+192KB), and even Arcade CD-ROM² titles (+2240KB).
 
 ### Enhancement
-In June 2022 I (patters) forked the source code to [create a version](https://github.com/patters-syno/pceadvance/releases/tag/v7.5-ez4) with the additional RAM support working for EZ-Flash IV and EZ-Flash 3in1 flashcarts. Originally, PCEAdvance enabled the EZ-Flash III PSRAM [here in **cart.s**](https://github.com/patters-syno/pceadvance/blob/65c94787246d6f8c3655c55d0106812b51fa41fc/src/cart.s#L542). This is an ASM implementation of the _OpenRamWrite()_ function as seen in the [firmware source code published by EZ-Team](https://github.com/ez-flash/ez3pda/blob/1d16559caf7a94dff6d8fdcf94f572bc09b36ae4/hard.cpp#L39).
+In June 2022 I (patters) forked the source code to [create a version](https://github.com/patters-syno/pceadvance/releases/tag/v7.5-ez4) with the additional RAM support working for EZ-Flash IV and EZ-Flash 3in1 flashcarts.
+
+### Enhancement - technical details
+Originally, PCEAdvance enabled the EZ-Flash III PSRAM [here in **cart.s**](https://github.com/patters-syno/pceadvance/blob/65c94787246d6f8c3655c55d0106812b51fa41fc/src/cart.s#L542). This is an ASM implementation of the _OpenRamWrite()_ function as seen in the [firmware source code published by EZ-Team](https://github.com/ez-flash/ez3pda/blob/1d16559caf7a94dff6d8fdcf94f572bc09b36ae4/hard.cpp#L39).
 
 I compared various known-good implementations of PSRAM access for EZ-Flash IV and EZ-Flash 3in1 devices. They were written for the Nintendo DS to access its GBA cartridge port (slot 2), but they will be close enough to serve as useful references:
 - Rick "Lick" Wong's [RAM Unlocking API](https://forum.gbadev.org/viewtopic.php?f=18&t=13023) - dead download links now, but the latest v1.3 code can be found in **ram.c** in [memtestARM](http://pineight.com/ds/#memtestARM). This library was used by Simon J Hall's incredible DS ports of [Quake](https://web.archive.org/web/20170115031913/http://quake.drunkencoders.com/index_q1.html) and [Quake II](https://web.archive.org/web/20080912065436/http://quake.drunkencoders.com/index_q2.html).
